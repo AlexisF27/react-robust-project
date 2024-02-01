@@ -1,5 +1,5 @@
 {
-  "name": "exercicio2",
+  "name": "exercicio1",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,6 +22,9 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^1.0.0"
   },
   "browserslist": {
     "production": [

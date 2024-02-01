@@ -1,6 +1,7 @@
-import React from 'react'
+import {useState} from 'react'
 
 const Content = () => {
+  const [name, setName] = useState('');
   const content = {
     textAlign: 'center',
     paddingTop: '20px',
@@ -9,7 +10,7 @@ const Content = () => {
   const handleNameChange = () => {
     const names = ['Alexis', 'Fernando', 'David'];
     const int = Math.floor(Math.random() * 3);
-    return names[int];
+    setName(names[int]);
   }
   const handleClick = () => {
     console.log('You click');
@@ -23,9 +24,10 @@ const Content = () => {
   return (
     <main style={content}>
       <p onDoubleClick={handleClick}>
-        Hello {handleNameChange()} !
+        Hello {name} !
       </p>
-      <button onClick={() => handleClick2('Alexis')}> Click it</button>
+      <button onClick={handleNameChange}> Change asfsdafName</button>
+      <button onClick={handleNameChange}> Change asfsdafName</button>
       <button onClick={(event) => handleClick3(event)}> Click 3 it</button>
     </main>
   )
