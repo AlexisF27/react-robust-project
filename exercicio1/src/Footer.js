@@ -1,17 +1,9 @@
 import React from 'react'
+import {footer} from './styles'
 
 const Footer = () => {
   const toDate = new Date();
-  const footer = {
-    position: "fixed",
-    bottom: "0",
-    left: "0",
-    width: "100%",
-    padding: "10px",
-    backgroundColor: 'mediumblue',
-    textAlign: 'center',
-    color: '#fff'
-  }
+
   return (
     <footer style={footer}>
       <p>

@@ -17,9 +17,6 @@ code {
   padding: 2px;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.App {
+  border: 1px solid #000;
 }
