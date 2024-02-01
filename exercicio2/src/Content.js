@@ -34,6 +34,8 @@ const Content = () => {
   const handleDelete = (id) => {
     const listItems = items.filter((item) => item.id !== id);
     setItems(listItems);
+    localStorage.setItem('shopingList', JSON.stringify(listItems));
+
   }
 
   const content = {
@@ -45,18 +47,23 @@ const Content = () => {
 
   return (
     <main style={content}>
-      <ul>
-        {items.map((item) => (
-          <li className='item' key={item.id}>
-            <input type="checkbox" checked={item.checked} onChange={() => handlechecked(item.id)} />
-            <label
-              style={(item.checked) ? {textDecoration: 'line-through' }: null}
-              onDoubleClick={() => handlechecked(item.id)}
-            >{item.item}</label>
-            <FaTrashAlt onClick={() => handleDelete(item.id)} role="button" tabIndex="0">Delete</FaTrashAlt>
-          </li>
-        ))}
-      </ul>
+      {items.length ?(
+        <ul>
+          {items.map((item) => (
+            <li className='item' key={item.id}>
+              <input type="checkbox" checked={item.checked} onChange={() => handlechecked(item.id)} />
+              <label
+                style={(item.checked) ? { textDecoration: 'line-through' } : null}
+                onDoubleClick={() => handlechecked(item.id)}
+              >{item.item}</label>
+              <FaTrashAlt onClick={() => handleDelete(item.id)} role="button" tabIndex="0">Delete</FaTrashAlt>
+            </li>
+          ))}
+        </ul>
+      ) : (
+      <p style={{marginTop:'2rem'}}> Your list is empty </p>
+      )
+      }
 
     </main>
   )
