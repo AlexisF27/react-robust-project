@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({ title = "Default Title" }) => {
   const header = {
     backgroundColor: 'mediumblue',
     color: '#fff',
@@ -8,9 +8,11 @@ const Header = () => {
   }
   return (
     <header style={header}>
-      <h1>Groceries List</h1>
+      <h1>{title}</h1>
     </header>
   )
 }
+
+
 
 export default Header
