@@ -3,7 +3,7 @@ import React from 'react'
 
 const LineItem = ({ item, handlechecked, handleDelete }) => {
   return (
-    <li className='item' key={item.id}>
+    <li className='item' >
       <input type="checkbox" checked={item.checked} onChange={() => handlechecked(item.id)} />
       <label
         style={(item.checked) ? { textDecoration: 'line-through' } : null}
