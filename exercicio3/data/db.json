@@ -1,19 +1,19 @@
- {
+{
   "items": [
     {
-      "id": 1,
-      "checked": false,
+      "id": "1",
+      "checked": true,
       "item": "Banana"
     },
     {
-      "id": 2,
+      "id": "11",
       "checked": false,
-      "item": "Milk"
+      "item": "few"
     },
     {
-      "id": 3,
+      "id": "1866",
       "checked": false,
-      "item": "Peach"
+      "item": "uhi"
     }
   ]
- }
+}
