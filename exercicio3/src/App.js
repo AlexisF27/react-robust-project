@@ -15,6 +15,7 @@ function App() {
   const [newItem, setNewItem] = useState('');
   const [search, setSearch] = useState('');
   const [fetchError, setFetchError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -27,9 +28,12 @@ function App() {
       } catch (error) {
         console.log(error.message);
         setFetchError(error.message);
+      } finally{
+        setIsLoading(false);
       }
     }
-    (async () => await fetchItems())();
+    setTimeout(() => { (async () => await fetchItems())(); }, 2000)
+
 
   }, [])
 
@@ -70,8 +74,9 @@ function App() {
         setNewItem={setNewItem}
         handleSubmit={handleSubmit} />
       <main>
+        {isLoading && <p>Loading items</p>}
         {fetchError && <p style={{ color: "red" }}>{`Error: ${fetchError}`}</p>}
-        {!fetchError && <Content
+        {!fetchError && !isLoading && <Content
           items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
           handlechecked={handlechecked}
           handleDelete={handleDelete} />}
